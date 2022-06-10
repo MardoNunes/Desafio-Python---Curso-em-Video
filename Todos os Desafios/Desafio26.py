@@ -1,0 +1,7 @@
+nome = input('Entre com uma frase: ')
+nome = nome.lower()
+print('A letra \"A\" aparece',nome.count('a'),'vezes')
+print('Ela aparece no indice:',nome.find('a'))
+nome2 = nome.find('a')
+nome3= nome[nome2:].find('a')
+print('E também no indice: {}'.format(nome3))
