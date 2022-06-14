@@ -1,36 +1,25 @@
-#nome = input('Entre com seu nome: ')
-#idade = int(input('Entre com sua idade: '))
-#sexo = str(input('Entre com seu sexo: '))
-
 soma = 0
+idadeMaior = 0
+nomeMaior = ''
+cont = 0
+for i in range(1, 5):
+    print('----- {}º PESSOA ------'.format(i))
+    nome = str(input('Qual é seu nome: '))
+    idade = int(input('Qual sua idade: '))
+    sexo = str(input('Qual seu sexo [M/F]: '))
 
-
-for i in range(0, 5):
-    nome = input('Entre com seu nome: ')
-    idade = int(input('Entre com sua idade: '))
-    sexo = str(input('Entre com seu sexo (Homem ou Mulher!): '))
-
-
-    #tratamento das idades, meida entre as idades
     soma = soma + idade
-    media = soma / 5
 
-    #Qual o nome do homem mais velho
-    if (sexo == 'homem') or (sexo == 'HOMEM') or (sexo == 'Homem'):
-        idade_maiorH = idade
-        if idade >= idade_maiorH:
-            idade_maiorH = idade
-            nome_maiorH = nome
+    if i == 1 and sexo in 'Mm':
+        idadeMaior = idade
+        nomeMaior = nome
+    if sexo in 'Mm' and idade > idadeMaior:
+        idadeMaior = idade
+        nomeMaior = nome
+    if sexo in 'Ff' and idade < 20:
+        cont += 1
 
-
-    #Qual o nome da mulher mais velha
-    if (sexo == 'mulher') or (sexo == 'Mulher') or (sexo == 'MULHER'):
-        idade_maiorM = idade
-        if idade >= idade_maiorM:
-            idade_maiorM = idade
-            nome_maiorM = nome
-
-#Printar media de idade, nome do homem mais velhor, nome da mulher mais velha
-print('Meida das idades: {}'.format(media))
-print('Homem mais velhor: {} \n'
-      'Mulher mais velha: {}'.format(nome_maiorH, nome_maiorM))
+mediaIdade = soma / 4
+print('A média de idades é {}\n'.format(mediaIdade),
+      'O homem mais velho tem {} anos e se chama {}\n'.format(idadeMaior, nomeMaior),
+      'Há {} mulheres com menos de 20 anos!'.format(cont))
