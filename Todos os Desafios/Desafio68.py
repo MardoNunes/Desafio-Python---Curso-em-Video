@@ -13,9 +13,9 @@ while True:
     else:
         pi = 'IMPAR'
     if esc == pi:
-        print(f'voce jogou {num} e o computador {pc}, {soma} é {pi} você ganhou!!')
+        print(f'Você jogou {num} e o computador {pc}, {soma} é {pi} você ganhou!!')
         cont += 1
     else:
-        print(f'voce jogou {num} e o computador {pc}, {soma} é {pi}, voce perdeu :(')
+        print(f'Você jogou {num} e o computador {pc}, {soma} é {pi}, voce perdeu :(')
         break
 print(f'Você ganhou {cont} vezes!! ')
